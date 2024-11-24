@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поздравление</title>
+    <style>
+        /* Сброс стилей по умолчанию */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Общие стили для тела страницы */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ff7f7f, #ffbf00, #ff00d4, #00d4ff);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Анимация фона */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Стиль для текста поздравления */
+        .message {
+            font-size: 7vw;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Стиль для подписи */
+        .signature {
+            font-size: 4vw;
+            opacity: 0.8;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Анимация для появления текста */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Стили для сердца */
+        .heart {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: pulse 1.5s infinite ease-in-out;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            left: 0;
+            top: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 50px;
+        }
+
+        /* Анимация пульсации сердца */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Медиазапросы для мобильных устройств */
+        @media (max-width: 600px) {
+            .message {
+                font-size: 12vw;
+            }
+
+            .signature {
+                font-size: 6vw;
+            }
+
+            .heart {
+                width: 35vw;
+                height: 35vw;
+            }
+        }
+
+        /* Эффект наведения на сердце */
+        .heart:hover {
+            transform: scale(1.2) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Текст поздравления -->
+    <div class="message">Для мой любимой!!!</div>
+
+    <!-- Пульсирующее сердце (ссылка для перехода на другую страницу) -->
+    <a href="ст2.html" class="heart"></a>
+
+    <!-- Подпись -->
+    <div class="signature">by Izik for cressspy <3</div>
+
+</body>
+</html>
